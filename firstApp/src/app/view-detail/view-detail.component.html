@@ -1,0 +1,15 @@
+<dx-popup #lookupPopUp
+[width]="200"
+[height]="200"
+[showTitle]="true"
+[title]='lookupTitle'
+[dragEnabled]="true"
+[closeOnOutsideClick]="true"
+(onHiding)="closePopup($event)"
+[(visible)]="viewDetailVisible">
+<div *dxTemplate="let data of 'content'">
+    <div>
+        <p>view-detail works!</p>
+    </div>
+</div>
+</dx-popup>

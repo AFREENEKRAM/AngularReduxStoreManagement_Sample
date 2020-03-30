@@ -3,7 +3,8 @@ import * as CommonAction from './common.action'
 
 
 const initialState : CommonState = {
-    detailData :''
+    detailData :'',
+    isShowLookup: false
 }
 
 export const CommonReducer = function (
@@ -16,7 +17,12 @@ export const CommonReducer = function (
             return {
                 ...state,
                 detailData: action.payload
-            }
+            };
+        case CommonAction.SHOW_LOOKUP:
+             return {
+                ...state,
+               isShowLookup: action.payload
+             };
 
         default:
             return state;

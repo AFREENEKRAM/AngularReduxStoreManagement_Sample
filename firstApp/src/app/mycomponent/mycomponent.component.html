@@ -1,5 +1,35 @@
-<p>mycomponent works!</p>
+<h1>GRID DATA</h1>
+<p>ON SELECTION OF A RECORD, DATA OF SELECTED RECORD STORES IN ANGULAR REDUX STORE</p>
 
-<input type="button" value="ViewMore" (click)="viewDetail()"/>
+<input type="button" value="View Stored Data On Another Component" (click)="viewDetail()" style="margin:20px"/>
+<dx-data-grid
+[dataSource]="gridDataSource"    
+
+[twoWayBindingEnabled]="false"
+
+[showColumnLines]="true"
+[showRowLines]="true"
+[showBorders]="true"
+
+(onCellClick)="loadDetail($event)"
+>
+<dxi-column dataField="name" dataType="string"></dxi-column>
+<dxi-column dataField="company" dataType="string"></dxi-column>
+<dxi-column dataField="price" dataType="string"></dxi-column>
+</dx-data-grid>
+
+<h1 style="margin: 10px; margin-top: 30px;">DATA FROM STORE</h1>
+<div>NAME</div>
+<div>
+    <input [value]="formData.name" size="50px" style="margin: 10px;"/>
+</div>
+<div>COMPANY</div>
+<div>
+    <input [value]="formData.company" size="50px" style="margin: 10px;"/>
+</div>
+<div>PRICE</div>
+<div>
+    <input [value]="formData.price" size="50px" style="margin: 10px;"/>
+</div>
 
 <ng-template appHost></ng-template>

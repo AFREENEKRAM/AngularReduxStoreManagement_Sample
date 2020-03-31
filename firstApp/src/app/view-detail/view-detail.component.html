@@ -1,6 +1,6 @@
 <dx-popup #lookupPopUp
-[width]="200"
-[height]="200"
+[width]="400"
+[height]="300"
 [showTitle]="true"
 [title]='lookupTitle'
 [dragEnabled]="true"
@@ -8,8 +8,20 @@
 (onHiding)="closePopup($event)"
 [(visible)]="viewDetailVisible">
 <div *dxTemplate="let data of 'content'">
-    <div>
-        <p>view-detail works!</p>
+    <div class="row">
+        
+        <div>NAME</div>
+        <div>
+            <input [value]="formData.name" size="50px" style="margin: 10px;"/>
+        </div>
+        <div>COMPANY</div>
+        <div>
+            <input [value]="formData.company" size="50px" style="margin: 10px;"/>
+        </div>
+        <div>PRICE</div>
+        <div>
+            <input [value]="formData.price" size="50px" style="margin: 10px;"/>
+        </div>
     </div>
 </div>
 </dx-popup>

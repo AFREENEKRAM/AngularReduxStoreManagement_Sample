@@ -3,6 +3,8 @@ import { dispatch } from 'rxjs/internal/observable/pairs';
 
 export const DETAIL_DATA ='DETAIL_DATA';
 export const SHOW_LOOKUP ='SHOW_LOOKUP';
+export const DATA_FROM_MY_COMPO ='DATA_FROM_MY_COMPO';
+
 
 @Injectable ({
     providedIn :"root"
@@ -10,32 +12,21 @@ export const SHOW_LOOKUP ='SHOW_LOOKUP';
 
 export class CommonAction {
 
-    data: any;
+  
     constructor() {
 
     }
 
-    getDetail () {
-        
-        return(dispatch,getState) => {
 
-            this.data = 'afreen';
-
-            dispatch( this.detail(this.data));
-        }
-        
-    }
-
-
-    detail (data) {
-        return { type: DETAIL_DATA, payload: data }
-    }
 
     showLookup() {
         return { type: SHOW_LOOKUP, payload: true };
     }
     hideLookup() {
         return { type: SHOW_LOOKUP, payload: false };
+    }
+    dataFromMyCompo(data) {
+        return { type: DATA_FROM_MY_COMPO, payload: data };
     }
 
 }

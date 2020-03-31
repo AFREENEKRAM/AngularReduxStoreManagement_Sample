@@ -3,8 +3,9 @@ import * as CommonAction from './common.action'
 
 
 const initialState : CommonState = {
-    detailData :'',
-    isShowLookup: false
+   
+    isShowLookup: false,
+    dataFromMyCompo:''
 }
 
 export const CommonReducer = function (
@@ -13,15 +14,16 @@ export const CommonReducer = function (
 ): CommonState {
     switch (action.type) {
 
-        case CommonAction.DETAIL_DATA:
-            return {
-                ...state,
-                detailData: action.payload
-            };
+       
         case CommonAction.SHOW_LOOKUP:
              return {
                 ...state,
                isShowLookup: action.payload
+             };
+        case CommonAction.DATA_FROM_MY_COMPO:
+             return {
+                ...state,
+               dataFromMyCompo: action.payload
              };
 
         default:

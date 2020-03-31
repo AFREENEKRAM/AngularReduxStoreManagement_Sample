@@ -9,16 +9,25 @@ import { CommonAction } from '../appstore/common/common.action';
 })
 export class ViewDetailComponent implements OnInit {
   viewDetailVisible: any;
+  formData: any;
   @select(['CommonStore', 'isShowLookup']) isShowLookup$;
+  @select(['CommonStore', 'dataFromMyCompo']) dataFromMyCompo$;
 
   constructor(
     public store: NgRedux<any>,
     public commonAction : CommonAction
   ) {
+    
     console.log("ViewDetailComponent constructor")
     this.isShowLookup$.subscribe(data =>{
       this.viewDetailVisible = data;
+    });
+
+    this.dataFromMyCompo$.subscribe(data =>{
+      this.formData = data;
+      console.log("formdata",this.formData )
     })
+
    }
 
   ngOnInit() {

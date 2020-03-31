@@ -12,7 +12,7 @@ import { MycomponentComponent } from './mycomponent/mycomponent.component';
 import thunk from 'redux-thunk';
 import { ViewDetailComponent } from './view-detail/view-detail.component';
 import { HostDirective } from './host.directive';
-import{ DxPopupModule } from 'devextreme-angular';
+import{ DxPopupModule, DxDataGridModule } from 'devextreme-angular';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +24,8 @@ import{ DxPopupModule } from 'devextreme-angular';
     BrowserModule,
     AppRoutingModule,
     NgReduxModule,
-    DxPopupModule
+    DxPopupModule,
+    DxDataGridModule
   ],
   entryComponents: [ViewDetailComponent],
   providers: [appStoreProvider],
